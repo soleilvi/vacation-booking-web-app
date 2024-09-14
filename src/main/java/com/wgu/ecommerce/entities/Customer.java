@@ -46,6 +46,6 @@ public class Customer {
     @JoinColumn(name = "division_id", nullable = false)
     private Division division;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "customers")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "id")
     private Set<Cart> carts;
 }

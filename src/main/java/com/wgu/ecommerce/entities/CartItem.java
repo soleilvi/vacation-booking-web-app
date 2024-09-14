@@ -7,6 +7,7 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import java.sql.Date;
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -23,8 +24,12 @@ public class CartItem {
     @JoinColumn(name = "vacation_id", nullable = false)
     private Vacation vacation;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "cart_items")
-    private Set<Excursion> excursions;
+    @ManyToMany
+    @JoinTable(
+            name = "excursion_cartitem",
+            joinColumns = @JoinColumn(name = "cart_item_id"),
+            inverseJoinColumns = @JoinColumn(name = "excursion_id"))
+    private Set<Excursion> excursions = new HashSet<>();
 
     @ManyToOne
     @JoinColumn(name = "cart_id", nullable = false)
