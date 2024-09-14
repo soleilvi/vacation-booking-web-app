@@ -1,8 +1,8 @@
-package com.example.demo.config;
+package com.wgu.ecommerce.config;
 
 -end.config;
 
-import com.example.demo.entities.*;
+import com.wgu.ecommerce.entities.*;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
 import org.springframework.data.rest.webmvc.config.RepositoryRestConfigurer;
