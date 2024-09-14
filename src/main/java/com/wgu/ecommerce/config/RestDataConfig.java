@@ -1,7 +1,5 @@
 package com.wgu.ecommerce.config;
 
--end.config;
-
 import com.wgu.ecommerce.entities.*;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
