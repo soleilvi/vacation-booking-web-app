@@ -48,4 +48,14 @@ public class Cart {
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "cart")
     private Set<CartItem> cartItem = new HashSet<>();
+
+    public void addCartItem(CartItem item) {
+        if (item != null) {
+            if (cartItem == null) {
+                cartItem = new HashSet<>();
+            }
+            cartItem.add(item);
+            item.setCart(this);
+        }
+    }
 }
