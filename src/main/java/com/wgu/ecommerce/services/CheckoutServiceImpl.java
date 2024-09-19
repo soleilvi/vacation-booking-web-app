@@ -36,6 +36,9 @@ public class CheckoutServiceImpl implements CheckoutService {
 
         // populate cart with cartItems
         Set<CartItem> cartItems = purchase.getCartItems();
+        if (cartItems.isEmpty()) {
+            System.out.println("Cart is empty!");
+        }
         cartItems.forEach(item -> cart.addCartItem(item));
 
         // populate customer with their cart

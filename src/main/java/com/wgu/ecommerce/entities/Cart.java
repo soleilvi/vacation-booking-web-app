@@ -21,7 +21,7 @@ public class Cart {
     @Column(name = "cart_id", nullable=false)
     private Long id;
 
-    @Column(name = "order_tracking_number")
+    @Column(name = "order_tracking_number", nullable=false)
     private String orderTrackingNumber;
 
     @Column(name = "package_price")
