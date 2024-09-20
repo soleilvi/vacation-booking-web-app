@@ -14,7 +14,20 @@ import java.util.Set;
 @Table(name="customers")
 @Setter
 @Getter
+// TODO parameterized constructor
 public class Customer {
+
+    public Customer() {}
+
+    public Customer(String firstName, String lastName, String address, String postal_code, String phone, Division division) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.address = address;
+        this.phone = phone;
+        this.postal_code = postal_code;
+        this.division = division;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "customer_id", nullable = false)
