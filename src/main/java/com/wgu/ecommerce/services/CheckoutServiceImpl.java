@@ -38,7 +38,9 @@ public class CheckoutServiceImpl implements CheckoutService {
         Set<CartItem> cartItems = purchase.getCartItems();
         if (cartItems.isEmpty()) {
             System.out.println("Cart is empty!");
+            throw new IllegalStateException("The cart is empty at checkout, so a purchase cannot be made.");
         }
+        System.out.println("Cart: " + cartItems);
         cartItems.forEach(item -> cart.addCartItem(item));
 
         // populate customer with their cart
