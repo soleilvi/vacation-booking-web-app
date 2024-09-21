@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.SourceType;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import java.sql.Date;
@@ -22,11 +23,11 @@ public class Division {
     private String division_name;
 
     @Column(name = "create_date")
-    @CreationTimestamp
+    @CreationTimestamp(source = SourceType.DB)
     private Date create_date;
 
     @Column(name = "last_update")
-    @UpdateTimestamp
+    @UpdateTimestamp(source = SourceType.DB)
     private Date last_update;
 
     @ManyToOne(fetch = FetchType.LAZY)
